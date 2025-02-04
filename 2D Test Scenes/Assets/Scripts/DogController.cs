@@ -10,7 +10,7 @@ public class DogController : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
 
-    public GameObject poop;
+   
     public AIChase aiChaseScript;
 
     private void OnEnable()
@@ -40,11 +40,6 @@ public class DogController : MonoBehaviour
         {
             moveSpeed = 0;
             aiChaseScript.speed = 0;
-        }
-
-        if (other.gameObject.tag == "Poop")
-        {
-            Destroy(poop);
         }
     }
 }
