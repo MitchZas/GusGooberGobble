@@ -7,6 +7,7 @@ TagManager:
   - Dog
   - Human
   - Poop
+  - Fence
   layers:
   - Default
   - TransparentFX
