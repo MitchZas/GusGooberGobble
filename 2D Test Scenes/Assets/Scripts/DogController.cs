@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class DogController : MonoBehaviour
 {
@@ -9,9 +10,10 @@ public class DogController : MonoBehaviour
 
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-
    
     public AIChase aiChaseScript;
+
+    
 
     private void OnEnable()
     {
@@ -38,8 +40,15 @@ public class DogController : MonoBehaviour
     {
         if (other.gameObject.tag == "Human")
         {
-            moveSpeed = 0;
-            aiChaseScript.speed = 0;
+            GameOver();
         }
+    }
+
+    public GameObject gameOverPanel;
+    void GameOver()
+    {
+        moveSpeed = 0;
+        aiChaseScript.speed = 0;
+        gameOverPanel.SetActive(true);
     }
 }
