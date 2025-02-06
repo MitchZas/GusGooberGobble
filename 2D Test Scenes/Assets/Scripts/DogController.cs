@@ -13,7 +13,10 @@ public class DogController : MonoBehaviour
    
     public AIChase aiChaseScript;
 
-    
+
+    [SerializeField] DroppingsManager dm;
+    [SerializeField] PoopCollector poopCollectorScript;
+    [SerializeField] CardShowUI cardShowScript;
 
     private void OnEnable()
     {
@@ -29,6 +32,11 @@ public class DogController : MonoBehaviour
     void Update()
     {
         moveDirection = dogControls.ReadValue<Vector2>();
+
+        if (dm.droppingsCount == 2)
+        {
+            cardShowScript.EnableCardShow();
+        }
     }
 
     private void FixedUpdate()
@@ -41,6 +49,15 @@ public class DogController : MonoBehaviour
         if (other.gameObject.tag == "Human")
         {
             GameOver();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Poop"))
+        {
+            Destroy(other.gameObject);
+            dm.droppingsCount++;
         }
     }
 
