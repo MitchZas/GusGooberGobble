@@ -1,16 +1,16 @@
 using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
-public class Card : MonoBehaviour
+[CreateAssetMenu(fileName = "New Card", menuName = "Cards/Dog")]
+public class Card : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public new string name;
+    public string description;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //public Sprite artwork;
+
+    public int speedChange;
+    public int strengthChange;
 }
