@@ -13,6 +13,7 @@ public class DogController : MonoBehaviour
    
     public AIChase aiChaseScript;
 
+    public GameObject InputHandler;
 
     [SerializeField] DroppingsManager dm;
     [SerializeField] PoopCollector poopCollectorScript;
@@ -36,6 +37,7 @@ public class DogController : MonoBehaviour
         if (dm.droppingsCount == 2)
         {
             cardShowScript.EnableCardShow();
+            InputHandler.SetActive(true);
         }
     }
 

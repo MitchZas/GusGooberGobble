@@ -8,6 +8,8 @@ TagManager:
   - Human
   - Poop
   - Fence
+  - Card
+  - Card1
   layers:
   - Default
   - TransparentFX
