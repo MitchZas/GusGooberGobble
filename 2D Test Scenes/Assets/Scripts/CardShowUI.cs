@@ -16,7 +16,7 @@ public class CardShowUI : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    void DisableCardShow()
+    public void DisableCardShow()
     {
         cardShowUI.SetActive(false);
         Time.timeScale = 1f;

@@ -1,34 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System;
+using System.Collections;
+using UnityEngine.EventSystems;
 
-public class InputHandler : MonoBehaviour
+public class InputHandler : MonoBehaviour, IPointerDownHandler
 {
-    private Camera mainCamera;
-
-    public GameObject Card1;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    [SerializeField] CardShowUI cardShowScript;
+    public void OnPointerDown (PointerEventData eventData)
     {
-        mainCamera = Camera.main;
-        Card1.GetComponent<Collider2D>().enabled = true;
-    }
-
-    public void OnClick(InputAction.CallbackContext context)
-    {
-        if (!context.started) return;
-
-        var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        if (!rayHit.collider) return;
-
-        Debug.Log(rayHit.collider.gameObject.name);
-
-        if (Card1)
+        if (gameObject.tag == "Card")
         {
-            Card1.SetActive(true);
+            // Set the CardShow Game Object to false
+            cardShowScript.DisableCardShow();
+            // Add the Zoomies Ability
+            Debug.Log("Card activated!");
         }
     }
-
-   
 }
