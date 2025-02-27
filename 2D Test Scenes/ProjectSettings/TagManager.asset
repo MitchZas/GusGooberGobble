@@ -10,6 +10,7 @@ TagManager:
   - Fence
   - Card
   - Card1
+  - Dirt
   layers:
   - Default
   - TransparentFX
