@@ -10,6 +10,8 @@ public class DogController : MonoBehaviour
 
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
+
+    public GameObject digBlock;
    
     public AIChase aiChaseScript;
 
@@ -35,6 +37,19 @@ public class DogController : MonoBehaviour
         if (dm.droppingsCount == 2)
         {
             cardShowScript.EnableCardShow();
+        }
+
+        if (Keyboard.current.eKey.wasPressedThisFrame && digBlock.tag == "Dirt")
+        {
+            Debug.Log("Digging Started");
+
+            // Dig 3 times 
+            // Play a sound when you dig 
+            // After 3 times, the hole breaks open 
+            // After the hole breaks, go to the item screen 
+            // Show two items 
+            // Have the player pick between two items 
+            // Equip item chosen
         }
     }
 
