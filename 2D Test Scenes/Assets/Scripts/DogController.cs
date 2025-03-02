@@ -12,6 +12,7 @@ public class DogController : MonoBehaviour
     public Rigidbody2D rb;
 
     public GameObject digBlock;
+    public AudioSource dirtDig;
    
     public AIChase aiChaseScript;
 
@@ -34,7 +35,7 @@ public class DogController : MonoBehaviour
     {
         moveDirection = dogControls.ReadValue<Vector2>();
 
-        if (dm.droppingsCount == 2)
+        if (dm.digRate == 3)
         {
             cardShowScript.EnableCardShow();
         }
@@ -44,7 +45,8 @@ public class DogController : MonoBehaviour
             Debug.Log("Digging Started");
 
             // Dig 3 times 
-            // Play a sound when you dig 
+            dirtDig.Play();
+            dm.digRate++;
             // After 3 times, the hole breaks open 
             // After the hole breaks, go to the item screen 
             // Show two items 

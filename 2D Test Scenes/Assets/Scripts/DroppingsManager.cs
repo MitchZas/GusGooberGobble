@@ -3,6 +3,7 @@ using UnityEngine;
 public class DroppingsManager : MonoBehaviour
 {
     public int droppingsCount;
+    public int digRate;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
