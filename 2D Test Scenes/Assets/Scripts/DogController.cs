@@ -44,14 +44,18 @@ public class DogController : MonoBehaviour
         {
             Debug.Log("Digging Started");
 
-            // Dig 3 times 
+            
             dirtDig.Play();
             dm.digRate++;
-            // After 3 times, the hole breaks open 
-            // After the hole breaks, go to the item screen 
+            // Sprite goes away  
             // Show two items 
             // Have the player pick between two items 
             // Equip item chosen
+        }
+
+        if (dm.droppings.Length == 0)
+        {
+            Debug.Log("NEW LEVEL");
         }
     }
 

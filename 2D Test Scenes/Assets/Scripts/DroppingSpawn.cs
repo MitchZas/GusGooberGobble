@@ -1,12 +1,10 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
-public class DroppingsManager : MonoBehaviour
+public class DroppingSpawn : MonoBehaviour
 {
-    public int droppingsCount;
-    public int digRate;
+    [SerializeField] GameManager gameManager;
+    [SerializeField] GameObject[] droppings;
 
-    public GameObject[] droppings;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +17,6 @@ public class DroppingsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-   
+        
     }
 }
