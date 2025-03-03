@@ -52,11 +52,6 @@ public class DogController : MonoBehaviour
             // Have the player pick between two items 
             // Equip item chosen
         }
-
-        if (dm.droppings.Length == 0)
-        {
-            Debug.Log("NEW LEVEL");
-        }
     }
 
     private void FixedUpdate()

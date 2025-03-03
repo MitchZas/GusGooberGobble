@@ -20,5 +20,6 @@ public class CardShowUI : MonoBehaviour
     {
         cardShowUI.SetActive(false);
         Time.timeScale = 1f;
+        Debug.Log("Card Go");
     }
 }
