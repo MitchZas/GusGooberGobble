@@ -3,7 +3,9 @@ using UnityEngine;
 public class CardShowUI : MonoBehaviour
 {
     public GameObject cardShowUI;
-    
+    public GameObject cardshowPanel;
+    public GameManager gamemanagerScript;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,8 +20,9 @@ public class CardShowUI : MonoBehaviour
 
     public void DisableCardShow()
     {
-        cardShowUI.SetActive(false);
-        Time.timeScale = 1f;
-        Debug.Log("Card Go");
+        //cardShowUI.SetActive(false);
+        cardshowPanel.SetActive(false);
+        Debug.Log("Normal Speed");
+        gamemanagerScript.ResumeGame();
     }
 }

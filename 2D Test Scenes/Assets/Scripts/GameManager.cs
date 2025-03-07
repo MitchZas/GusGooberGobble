@@ -19,4 +19,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
 }

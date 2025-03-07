@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class InputHandler : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] CardShowUI cardShowScript;
+    //[SerializeField] GameManager gamemanagerScript;
     public void OnPointerDown (PointerEventData eventData)
     {
         if (gameObject.tag == "Card")

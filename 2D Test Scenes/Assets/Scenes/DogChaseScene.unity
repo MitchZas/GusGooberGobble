@@ -563,6 +563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardShowUI: {fileID: 990476786}
+  cardshowPanel: {fileID: 330747374}
+  gamemanagerScript: {fileID: 213808152}
 --- !u!114 &213808155
 MonoBehaviour:
   m_ObjectHideFlags: 0
