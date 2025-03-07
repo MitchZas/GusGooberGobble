@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] DroppingsManager dm;
+
     public void Restart()
     {
         SceneManager.LoadScene(0);
@@ -11,5 +13,10 @@ public class GameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void NextRound()
+    {
+        SceneManager.LoadScene(1);
     }
 }

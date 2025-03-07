@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2128032283712816969}
   - component: {fileID: 1726982595831934202}
   - component: {fileID: 206890352627688688}
-  - component: {fileID: 3977558374815712075}
   m_Layer: 0
   m_Name: Poop
   m_TagString: Poop
@@ -125,17 +124,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &3977558374815712075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3935739125351623347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9134b086fc23bf4f9de9c672877abf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poop: {fileID: 3935739125351623347}
-  droppingsValue: 0

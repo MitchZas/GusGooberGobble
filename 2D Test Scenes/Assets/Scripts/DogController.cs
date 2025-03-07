@@ -12,12 +12,12 @@ public class DogController : MonoBehaviour
     public Rigidbody2D rb;
 
     public GameObject digBlock;
+    public GameObject nextRoundUI;
     public AudioSource dirtDig;
    
     public AIChase aiChaseScript;
 
     [SerializeField] DroppingsManager dm;
-    [SerializeField] PoopCollector poopCollectorScript;
     [SerializeField] CardShowUI cardShowScript;
 
     private void OnEnable()
@@ -51,6 +51,12 @@ public class DogController : MonoBehaviour
             // Show two items 
             // Have the player pick between two items 
             // Equip item chosen
+        }
+
+        if (dm.droppingsCount == 4)
+        {
+            nextRoundUI.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 
