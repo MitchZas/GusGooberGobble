@@ -17,6 +17,7 @@ public class InputHandler : MonoBehaviour, IPointerDownHandler
             cardShowScript.DisableCardShow();
             // Add the Zoomies Ability
             Debug.Log("Card activated!");
+          
         }
     }
 }

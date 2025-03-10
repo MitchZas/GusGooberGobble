@@ -9,7 +9,7 @@ public class CardShowUI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        cardShowUI.SetActive(false);
+        //cardShowUI.SetActive(false);
     }
 
     public void EnableCardShow()
@@ -20,9 +20,9 @@ public class CardShowUI : MonoBehaviour
 
     public void DisableCardShow()
     {
-        //cardShowUI.SetActive(false);
-        cardshowPanel.SetActive(false);
+        cardShowUI.SetActive(false);
+        //cardshowPanel.SetActive(false);
         Debug.Log("Normal Speed");
-        gamemanagerScript.ResumeGame();
+        Time.timeScale = 1f;
     }
 }
