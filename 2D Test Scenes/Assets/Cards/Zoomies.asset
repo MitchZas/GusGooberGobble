@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12425faccde7d524cbbdbafcec464bbc, type: 3}
-  m_Name: Bark
+  m_Name: Zoomies
   m_EditorClassIdentifier: 
-  name: BARK
-  description: You're able to bark now! Barking stuns the owner for 3 seconds
-  speedChange: 0
+  name: ZOOMIES
+  description: Add +3 to Speed for 5 seconds
+  artwork: {fileID: -1518713475451153952, guid: 5cbe13a3fa31fa74a9d588a85012c8a8, type: 3}
+  speedChange: 3
   strengthChange: 0
