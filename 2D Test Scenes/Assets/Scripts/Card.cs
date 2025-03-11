@@ -9,7 +9,7 @@ public class Card : ScriptableObject
     public new string name;
     public string description;
 
-    //public Sprite artwork;
+    public Sprite artwork;
 
     public int speedChange;
     public int strengthChange;
