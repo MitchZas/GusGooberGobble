@@ -17,6 +17,8 @@ public class DogController : MonoBehaviour
    
     public AIChase aiChaseScript;
 
+    public ContactFilter2D contactFilter;
+
     [SerializeField] DroppingsManager dm;
     [SerializeField] CardShowUI cardShowScript;
 
@@ -40,17 +42,21 @@ public class DogController : MonoBehaviour
             cardShowScript.EnableCardShow();
         }
 
-        if (Keyboard.current.eKey.wasPressedThisFrame && digBlock.tag == "Dirt")
+        if (Keyboard.current.eKey.wasPressedThisFrame)
         {
-            Debug.Log("Digging Started");
+            RaycastHit2D hit = Physics2D.Raycast(transform.position,Vector2.down);
 
-            
-            dirtDig.Play();
-            dm.digRate++;
-            // Sprite goes away  
-            // Show two items 
-            // Have the player pick between two items 
-            // Equip item chosen
+            if (hit.collider.CompareTag("Dirt"))
+            {
+                Debug.Log("Digging Started");
+                dirtDig.Play();
+                dm.digRate++;
+                // Sprite goes away  
+                // Show two items 
+                // Have the player pick between two items 
+                // Equip item chosen
+            }
+
         }
 
         if (dm.droppingsCount == 4)
