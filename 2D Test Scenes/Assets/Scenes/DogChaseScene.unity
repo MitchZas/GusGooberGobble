@@ -367,22 +367,9 @@ MonoBehaviour:
   nextRoundUI: {fileID: 316717997}
   dirtDig: {fileID: 869013671}
   aiChaseScript: {fileID: 1300631494}
-  contactFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
   dm: {fileID: 213808155}
   cardShowScript: {fileID: 213808154}
+  inputHandlerScript: {fileID: 213808156}
   gameOverPanel: {fileID: 923132407}
 --- !u!61 &67826459
 BoxCollider2D:
@@ -529,6 +516,7 @@ GameObject:
   - component: {fileID: 213808152}
   - component: {fileID: 213808154}
   - component: {fileID: 213808155}
+  - component: {fileID: 213808156}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -577,8 +565,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardShowUI: {fileID: 990476786}
-  cardshowPanel: {fileID: 330747374}
-  gamemanagerScript: {fileID: 213808152}
 --- !u!114 &213808155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,6 +579,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   droppingsCount: 0
   digRate: 0
+--- !u!114 &213808156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213808151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c9d6db6e3ecca428acb3e25ee60842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardShowScript: {fileID: 213808154}
+  dm: {fileID: 213808155}
 --- !u!1 &236468287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,6 +2394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardShowScript: {fileID: 213808154}
+  dm: {fileID: 213808155}
 --- !u!1 &869013670
 GameObject:
   m_ObjectHideFlags: 0
@@ -5150,6 +5151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardShowScript: {fileID: 213808154}
+  dm: {fileID: 213808155}
 --- !u!1 &2070898498
 GameObject:
   m_ObjectHideFlags: 0

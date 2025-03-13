@@ -3,14 +3,7 @@ using UnityEngine;
 public class CardShowUI : MonoBehaviour
 {
     public GameObject cardShowUI;
-    public GameObject cardshowPanel;
-    public GameManager gamemanagerScript;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //cardShowUI.SetActive(false);
-    }
+    //public GameManager gamemanagerScript;
 
     public void EnableCardShow()
     {
@@ -20,9 +13,8 @@ public class CardShowUI : MonoBehaviour
 
     public void DisableCardShow()
     {
+        Debug.Log("Close Card");
         cardShowUI.SetActive(false);
-        //cardshowPanel.SetActive(false);
-        Debug.Log("Normal Speed");
         Time.timeScale = 1f;
     }
 }

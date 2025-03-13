@@ -8,16 +8,13 @@ using UnityEngine.EventSystems;
 public class InputHandler : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] CardShowUI cardShowScript;
-    //[SerializeField] GameManager gamemanagerScript;
+    [SerializeField] DroppingsManager dm;
     public void OnPointerDown (PointerEventData eventData)
     {
         if (gameObject.tag == "Card")
         {
-            // Set the CardShow Game Object to false
-            cardShowScript.DisableCardShow();
-            // Add the Zoomies Ability
             Debug.Log("Card activated!");
-          
+            cardShowScript.DisableCardShow();
         }
     }
 }

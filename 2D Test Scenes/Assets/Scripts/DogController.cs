@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -17,10 +19,9 @@ public class DogController : MonoBehaviour
    
     public AIChase aiChaseScript;
 
-    public ContactFilter2D contactFilter;
-
     [SerializeField] DroppingsManager dm;
     [SerializeField] CardShowUI cardShowScript;
+    [SerializeField] InputHandler inputHandlerScript;
 
     private void OnEnable()
     {
@@ -37,26 +38,21 @@ public class DogController : MonoBehaviour
     {
         moveDirection = dogControls.ReadValue<Vector2>();
 
-        if (dm.digRate == 3)
+        //if (dm.digRate == 3)
+        //{
+            //cardShowScript.EnableCardShow();
+       // }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             cardShowScript.EnableCardShow();
         }
 
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position,Vector2.down);
-
-            if (hit.collider.CompareTag("Dirt"))
-            {
-                Debug.Log("Digging Started");
-                dirtDig.Play();
-                dm.digRate++;
-                // Sprite goes away  
-                // Show two items 
-                // Have the player pick between two items 
-                // Equip item chosen
-            }
-
+            Debug.Log("Pressed");
+            dirtDig.Play();
+            dm.digRate++;
         }
 
         if (dm.droppingsCount == 4)
