@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class DogController : MonoBehaviour
 {
-    public InputAction dogControls;
+    private PlayerInput playerInput;
+
+    private Rigidbody2D rb;
 
     Vector2 moveDirection = Vector2.zero;
 
-    public float moveSpeed = 5f;
-    public Rigidbody2D rb;
+    [SerializeField] private float moveSpeed = 5f;
+    
 
     public GameObject digBlock;
     public GameObject nextRoundUI;
@@ -23,21 +25,16 @@ public class DogController : MonoBehaviour
     [SerializeField] CardShowUI cardShowScript;
     [SerializeField] InputHandler inputHandlerScript;
 
-    private void OnEnable()
+    private void Start()
     {
-        dogControls.Enable();
+        playerInput = new PlayerInput();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    private void OnDisable()
-    {
-        dogControls.Disable();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        moveDirection = dogControls.ReadValue<Vector2>();
-
         //if (dm.digRate == 3)
         //{
             //cardShowScript.EnableCardShow();
@@ -60,11 +57,6 @@ public class DogController : MonoBehaviour
             nextRoundUI.SetActive(true);
             Time.timeScale = 0f;
         }
-    }
-
-    private void FixedUpdate()
-    {
-        rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -91,4 +83,11 @@ public class DogController : MonoBehaviour
         aiChaseScript.speed = 0;
         gameOverPanel.SetActive(true);
     }
+
+    private void OnMove(InputValue inputValue)
+    {
+        rb.linearVelocity = inputValue.Get<Vector2>() * moveSpeed;
+        Debug.Log("Move");
+    }
 }
+
