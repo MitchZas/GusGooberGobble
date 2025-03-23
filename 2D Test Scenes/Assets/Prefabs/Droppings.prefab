@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1726982595831934202}
   - component: {fileID: 206890352627688688}
   m_Layer: 0
-  m_Name: Poop
+  m_Name: Droppings
   m_TagString: Poop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

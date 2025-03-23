@@ -17,6 +17,8 @@ public class DogController : MonoBehaviour
 
     public GameObject digBlock;
     public GameObject nextRoundUI;
+    [SerializeField] GameObject gate;
+    
     public AudioSource dirtDig;
    
     public AIChase aiChaseScript;
@@ -54,8 +56,7 @@ public class DogController : MonoBehaviour
 
         if (dm.droppingsCount == 4)
         {
-            nextRoundUI.SetActive(true);
-            Time.timeScale = 0f;
+            Destroy(gate);
         }
     }
 
