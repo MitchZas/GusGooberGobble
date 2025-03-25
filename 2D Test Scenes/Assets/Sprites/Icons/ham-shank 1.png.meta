@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ham-shank 1_0: 9080734707254134698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

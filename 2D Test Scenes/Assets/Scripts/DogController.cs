@@ -23,6 +23,8 @@ public class DogController : MonoBehaviour
    
     public AIChase aiChaseScript;
 
+    Vector2 moveInput;
+
     [SerializeField] DroppingsManager dm;
     [SerializeField] CardShowUI cardShowScript;
     [SerializeField] InputHandler inputHandlerScript;
@@ -33,8 +35,6 @@ public class DogController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         //if (dm.digRate == 3)
@@ -58,6 +58,11 @@ public class DogController : MonoBehaviour
         {
             Destroy(gate);
         }
+    }
+
+    void FixedUpdate()
+    { 
+        rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -85,10 +90,10 @@ public class DogController : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
 
-    private void OnMove(InputValue inputValue)
+    public void OnMove(InputValue value)
     {
-        rb.linearVelocity = inputValue.Get<Vector2>() * moveSpeed;
-        Debug.Log("Move");
+        moveInput = value.Get<Vector2>();
+        //rb.linearVelocity = inputValue.Get<Vector2>() * moveSpeed;
     }
 }
 
