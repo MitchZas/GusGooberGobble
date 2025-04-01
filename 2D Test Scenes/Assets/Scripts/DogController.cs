@@ -12,8 +12,7 @@ public class DogController : MonoBehaviour
 
     Vector2 moveDirection = Vector2.zero;
 
-    [SerializeField] private float moveSpeed = 5f;
-    
+    public float moveSpeed = 5f;
 
     public GameObject digBlock;
     public GameObject nextRoundUI;
