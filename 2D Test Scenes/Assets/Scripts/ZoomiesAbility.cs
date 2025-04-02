@@ -17,6 +17,5 @@ public class ZoomiesAbility : BaseAbility
     {
         DogController movement = parent.GetComponent<DogController>();
         movement.moveSpeed = movement.moveSpeed - moveSpeedIncrease;
-
     }
 }
