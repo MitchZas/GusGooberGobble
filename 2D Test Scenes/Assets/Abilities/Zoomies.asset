@@ -15,4 +15,5 @@ MonoBehaviour:
   name: Zoomies
   cooldownTime: 2
   activeTime: 2
-  moveSpeedIncrease: 2000
+  moveSpeedIncrease: 1500
+  isActive: 1

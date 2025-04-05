@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Growl
   cooldownTime: 2
   activeTime: 3
-  dogGrowlSFX: {fileID: 0}
+  isActive: 0

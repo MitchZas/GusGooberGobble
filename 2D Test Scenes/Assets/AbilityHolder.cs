@@ -6,12 +6,8 @@ public class AbilityHolder : MonoBehaviour
     float cooldownTime;
     float activeTime;
 
-    enum AbilityState
-    {
-        ready,
-        active,
-        cooldown
-    }
+    public enum AbilityState { ready, active, cooldown }
+    
     AbilityState state = AbilityState.ready;
 
     public KeyCode key;
@@ -51,8 +47,5 @@ public class AbilityHolder : MonoBehaviour
                 }
                 break;
         }
-        
-        
-        
     }
 }

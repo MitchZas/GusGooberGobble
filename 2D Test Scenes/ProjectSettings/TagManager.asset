@@ -11,6 +11,9 @@ TagManager:
   - Card
   - Card1
   - Dirt
+  - Zoomies
+  - Growl
+  - Pickup
   layers:
   - Default
   - TransparentFX

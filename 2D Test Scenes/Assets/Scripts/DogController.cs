@@ -25,27 +25,20 @@ public class DogController : MonoBehaviour
     Vector2 moveInput;
 
     [SerializeField] DroppingsManager dm;
-    [SerializeField] CardShowUI cardShowScript;
     [SerializeField] InputHandler inputHandlerScript;
+    [SerializeField] AbilityHolder abilityHolderScript;
+
+    [SerializeField] Image ZoomiesIcon;
 
     private void Start()
     {
         playerInput = new PlayerInput();
         rb = GetComponent<Rigidbody2D>();
+        ZoomiesIcon.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        //if (dm.digRate == 3)
-        //{
-            //cardShowScript.EnableCardShow();
-       // }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            cardShowScript.EnableCardShow();
-        }
-
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
             Debug.Log("Pressed");
@@ -78,6 +71,12 @@ public class DogController : MonoBehaviour
         {
             Destroy(other.gameObject);
             dm.droppingsCount++;
+        }
+
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            ZoomiesIcon.gameObject.SetActive(true);
+            Destroy(other.gameObject);
         }
     }
 
