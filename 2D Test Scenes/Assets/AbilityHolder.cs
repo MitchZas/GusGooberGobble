@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AbilityHolder : MonoBehaviour
@@ -10,6 +11,8 @@ public class AbilityHolder : MonoBehaviour
     
     AbilityState state = AbilityState.ready;
 
+    public GameObject pickupItem;
+
     public KeyCode key;
     // Update is called once per frame
     void Update()
@@ -17,13 +20,15 @@ public class AbilityHolder : MonoBehaviour
         switch (state)
         {
             case AbilityState.ready:
-                if (Input.GetKeyDown(key))
+                {
+                if (Input.GetKeyDown(key) && pickupItem == null)
                 {
                     ability.Activate(gameObject);
                     state = AbilityState.active;
                     activeTime = ability.activeTime;
                 }
-                break;
+                }
+                    break;
             case AbilityState.active:
                 if (activeTime > 0)
                 {

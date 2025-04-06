@@ -350,6 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ability: {fileID: 11400000, guid: c27f2fb70e2cf7c47baadce6ce7d5d06, type: 2}
+  pickupItem: {fileID: 1459758804}
   key: 32
 --- !u!1 &84220076
 GameObject:
@@ -572,7 +573,6 @@ GameObject:
   m_Component:
   - component: {fileID: 213808153}
   - component: {fileID: 213808152}
-  - component: {fileID: 213808154}
   - component: {fileID: 213808155}
   - component: {fileID: 213808156}
   m_Layer: 0
@@ -610,19 +610,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &213808154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213808151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c165270787305034bad43d46725bdc60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardShowUI: {fileID: 0}
 --- !u!114 &213808155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3438,7 +3425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 67826454}
-  speed: 0
+  speed: 3
   growlAbilityScript: {fileID: 11400000, guid: ba5d8e968a8ab874ebdabcf127e5f603, type: 2}
   dogGrowlSFX: {fileID: 643093396}
 --- !u!58 &1300631495
