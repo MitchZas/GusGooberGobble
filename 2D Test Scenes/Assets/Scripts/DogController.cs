@@ -28,13 +28,10 @@ public class DogController : MonoBehaviour
     [SerializeField] InputHandler inputHandlerScript;
     [SerializeField] AbilityHolder abilityHolderScript;
 
-    [SerializeField] Image ZoomiesIcon;
-
     private void Start()
     {
         playerInput = new PlayerInput();
         rb = GetComponent<Rigidbody2D>();
-        ZoomiesIcon.gameObject.SetActive(false);
     }
 
     void Update()
@@ -75,7 +72,6 @@ public class DogController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Pickup"))
         {
-            ZoomiesIcon.gameObject.SetActive(true);
             Destroy(other.gameObject);
         }
     }

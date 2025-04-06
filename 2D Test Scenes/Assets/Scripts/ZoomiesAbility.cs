@@ -8,14 +8,9 @@ public class ZoomiesAbility : BaseAbility
 {
     public float moveSpeedIncrease;
     
-    Image ZoomiesIcon;
-
     void Start()
     {
-        
-        Color c = ZoomiesIcon.color;
-        c.a = 255;
-        ZoomiesIcon.color = c;
+
     }
 
     public override void Activate(GameObject parent)
