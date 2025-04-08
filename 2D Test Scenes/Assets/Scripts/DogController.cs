@@ -25,7 +25,7 @@ public class DogController : MonoBehaviour
     Vector2 moveInput;
 
     [SerializeField] DroppingsManager dm;
-    [SerializeField] InputHandler inputHandlerScript;
+    //[SerializeField] InputHandler inputHandlerScript;
     [SerializeField] AbilityHolder abilityHolderScript;
 
     private void Start()
@@ -38,9 +38,13 @@ public class DogController : MonoBehaviour
     {
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
-            Debug.Log("Pressed");
-            dirtDig.Play();
-            dm.digRate++;
+            
+        }
+
+        if (dm.digRate == 3)
+        {
+            digBlock.GetComponent<LootBag>().InstantiateLoot(transform.position); // Instinate Loot
+            Destroy(digBlock); // Destroy Game Object
         }
 
         if (dm.droppingsCount == 4)
@@ -73,6 +77,18 @@ public class DogController : MonoBehaviour
         if (other.gameObject.CompareTag("Pickup"))
         {
             Destroy(other.gameObject);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Dirt"))
+        {
+            Input.GetKeyDown(KeyCode.E); // Allow Keyboard input
+            Debug.Log("Pressed");
+
+            dirtDig.Play(); // Play the Dig Sound
+            dm.digRate++; // Incriment the dig rate           
         }
     }
 
