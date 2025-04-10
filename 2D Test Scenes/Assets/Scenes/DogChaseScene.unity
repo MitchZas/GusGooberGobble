@@ -1135,6 +1135,8 @@ GameObject:
   - component: {fileID: 347823192}
   - component: {fileID: 347823191}
   - component: {fileID: 347823193}
+  - component: {fileID: 347823194}
+  - component: {fileID: 347823195}
   m_Layer: 0
   m_Name: DirtBlock1stPass_0
   m_TagString: Dirt
@@ -1258,6 +1260,39 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.020966, y: 8.45}
   m_EdgeRadius: 0
+--- !u!114 &347823194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347823190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63b142f0d7c36d468589c21d2f1a8a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droppedItemPrefab: {fileID: 6594110359615225927, guid: 6e0750d281eb08d45b8a85c27c355919, type: 3}
+  lootList:
+  - {fileID: 11400000, guid: d88e95773e23d164e979037dccaa17ae, type: 2}
+  - {fileID: 11400000, guid: c4a3bd536d69f174ab055849fe6c93a0, type: 2}
+  - {fileID: 11400000, guid: 079c318d5d66c1e49951e6f15c97badf, type: 2}
+  - {fileID: 11400000, guid: acaf589bcc076e246a084fd2b53f0e8d, type: 2}
+--- !u!114 &347823195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347823190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f5a3d978a5f1a942ac1ab85f378219d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dogControllerScript: {fileID: 67826458}
+  dm: {fileID: 213808155}
+  abilityHolderScript: {fileID: 67826461}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,7 +3385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 67826454}
-  speed: 3
+  speed: 0
   growlAbilityScript: {fileID: 11400000, guid: ba5d8e968a8ab874ebdabcf127e5f603, type: 2}
   dogGrowlSFX: {fileID: 643093396}
 --- !u!58 &1300631495
@@ -3406,7 +3441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1459758805
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3517,8 +3552,8 @@ Transform:
   m_GameObject: {fileID: 1459758804}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.467103, y: 4.432262, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -19.07, y: 4.4048, z: 0}
+  m_LocalScale: {x: 0.78787, y: 0.78787, z: 0.78787}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

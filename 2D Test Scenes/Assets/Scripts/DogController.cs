@@ -24,6 +24,8 @@ public class DogController : MonoBehaviour
 
     Vector2 moveInput;
 
+    bool canDig;
+
     [SerializeField] DroppingsManager dm;
     [SerializeField] InputHandler inputHandlerScript;
     [SerializeField] AbilityHolder abilityHolderScript;
@@ -32,13 +34,13 @@ public class DogController : MonoBehaviour
     {
         playerInput = new PlayerInput();
         rb = GetComponent<Rigidbody2D>();
+        canDig = false;
     }
 
     void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame)
+        if (Keyboard.current.eKey.wasPressedThisFrame & canDig)
         {
-            Debug.Log("Pressed");
             dirtDig.Play();
             dm.digRate++;
         }
@@ -73,6 +75,11 @@ public class DogController : MonoBehaviour
         if (other.gameObject.CompareTag("Pickup"))
         {
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Dirt"))
+        {
+            canDig = true;
         }
     }
 
